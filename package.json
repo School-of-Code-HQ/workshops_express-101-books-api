@@ -1,0 +1,28 @@
+{
+  "name": "workshops_express-101-books-api",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">     <img alt=\"School of Code\" src=\"./images/soc-logo.png\" width=\"60\" /> </div> <h1 align=\"center\">   Express 101 - books API </h1>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/School-of-Code-HQ/workshops_express-101-books-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/School-of-Code-HQ/workshops_express-101-books-api/issues"
+  },
+  "homepage": "https://github.com/School-of-Code-HQ/workshops_express-101-books-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
