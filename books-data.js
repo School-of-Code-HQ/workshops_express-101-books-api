@@ -3,7 +3,7 @@ const books = [
   { id: 2, title: "Clean Code", author: "Robert Martin" },
   { id: 3, title: "The Night Circus", author: "Erin Morgenstern" },
   { id: 4, title: "Rivers of London", author: "Ben Aaronovich" },
-  { id: 5, title: "Crime and Punishment", author: "Fyodr Dostoyevsky" },
+  { id: 5, title: "Crime and Punishment", author: "Fyodr Dostoyevsky" }
 ];
 
-module.exports = { books };
+export default books;
