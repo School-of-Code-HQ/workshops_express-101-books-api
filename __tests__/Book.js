@@ -8,7 +8,7 @@ const modifiedBook = { id: 3, title: "The Night Movie", author: "Erin Morgy" };
 const newBook = { id: 6, title: "The Bible", author: "Unknown" };
 
 const getBooks = (id = null) => {
-  const url = `/book${id ? `/${id}` : ""}`;
+  const url = `/books${id ? `/${id}` : ""}`;
   return request(app).get(url).send();
 };
 
@@ -17,17 +17,17 @@ const postBook = (book) => {
 };
 
 const putBook = (book) => {
-  const url = `/book/${book.id}`;
+  const url = `/books/${book.id}`;
   return request(app).put(url).send(book);
 }
 
 const deleteBook = (id) => {
-  const url = `/book/${id}`;
+  const url = `/books/${id}`;
   return request(app).delete(url).send();
 }
 
 const patchBook = (id, data) => {
-  const url = `/book/${id}`;
+  const url = `/books/${id}`;
   return request(app).patch(url).send(data);
 }
 
