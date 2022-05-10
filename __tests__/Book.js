@@ -9,7 +9,7 @@ const newBook = { id: 6, title: "The Bible", author: "Unknown" };
 
 const getBooks = (id = null) => {
   const url = `/book${id ? `/${id}` : ""}`;
-  return request(app).get(url).send()
+  return request(app).get(url).send();
 };
 
 const postBook = (book) => {
@@ -19,6 +19,11 @@ const postBook = (book) => {
 const putBook = (book) => {
   const url = `/book/${book.id}`;
   return request(app).put(url).send(book);
+}
+
+const deleteBook = (id) => {
+  const url = `/book/${id}`;
+  return request(app).delete(url).send();
 }
 
 const patchBook = (id, data) => {
@@ -48,16 +53,16 @@ describe("Create Book", () => {
 describe("Update Book", () => {
   it("should update and return the new book when sent a valid PUT request", async () => {
     const putResponse = await putBook(modifiedBook);
-    const response = getBooks(modifiedBook.id);
+    const response = await getBooks(modifiedBook.id);
     expect(putResponse.body).toEqual({success: true, payload: modifiedBook})
     expect(response.body).toEqual({success: true, payload: modifiedBook});
   });
 
   it("should update and return the new book when sent a valid PATCH request", async () => {
     const title = "New title";
-    const payload = {...validBook, title}
+    const payload = {...modifiedBook, title}
     const patchResponse = await patchBook(validBook.id, {title});
-    const response = getBooks(validBook.id);
+    const response = await getBooks(validBook.id);
     expect(patchResponse.body).toEqual({success: true, payload})
     expect(response.body).toEqual({success: true, payload});
   });
@@ -65,10 +70,10 @@ describe("Update Book", () => {
 
 describe("Delete Book", () => {
   it("should delete and return the book when sent a valid DELETE request", async () => {
-    const response = await deleteBook(validBook.id);
+    const response = await deleteBook(newBook.id);
     const getResponse = await getBooks();
-    expect(response.body).toEqual({success: true, payload: validBook});
-    expect(getResponse.body.find(book => book.id === validBook.id)).not().toBeDefined();
+    expect(response.body).toEqual({success: true, payload: newBook});
+    expect(getResponse.body.payload.find(book => book.id === newBook.id)).not.toBeDefined();
   });
 });
 
