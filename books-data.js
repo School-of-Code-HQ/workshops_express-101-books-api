@@ -6,4 +6,4 @@ const books = [
   { id: 5, title: "Crime and Punishment", author: "Fyodr Dostoyevsky" }
 ];
 
-export default books;
+module.exports = books;

@@ -1,7 +1,7 @@
-import request from "supertest";
+const request = require("supertest");
 
-import app from "../app.js";
-import books from "../books-data.js";
+const app = require("../app.js");
+const books = require("../books-data.js");
 
 const validBook = { id: 3, title: "The Night Circus", author: "Erin Morgenstern" };
 const modifiedBook = { id: 3, title: "The Night Movie", author: "Erin Morgy" };
