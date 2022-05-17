@@ -7,4 +7,4 @@
 
 Follow along with the examples in class to create a simple books API.
 
-This repo is already an NPM project, and Express and Nodemon are already dependencies, so remember to `npm i` before you get started, and run your server in development mode with `npm run dev`.
+This repo is already an NPM project, and Express and Nodemon are already dependencies, so remember to `npm i` before you get started, and run your server in development mode with `npm start`.
